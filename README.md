@@ -20,9 +20,8 @@ spotify2/
 - **Custom Styling** (`style.css`, `auth.css`): Clean and modern UI based on Spotify’s design.
 
 ## Usage
-1. Extract the contents of the ZIP file.
-2. Open `index.html` in a web browser to preview the main page.
-3. Navigate to `login.html` or `signup.html` to see the authentication screens.
+1. Open `index.html` in a web browser to preview the main page.
+2. Navigate to `login.html` or `signup.html` to see the authentication screens.
 
 ## Technologies Used
 - **HTML** for structuring the webpages.
