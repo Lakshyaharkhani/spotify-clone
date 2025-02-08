@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #121212;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+
+.sidebar {
+    width: 280px;
+    background-color: #000;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 80px;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    margin-bottom: 24px;
+}
+
+.logo i {
+    font-size: 40px;
+    color: #fff;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav ul li {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+}
+
+.sidebar-nav ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sidebar-nav ul li.active a {
+    color: #fff;
+}
+
+.sidebar-nav ul li:hover a {
+    color: #fff;
+}
+
+.playlist-section,
+.podcast-section {
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+.playlist-section h3,
+.podcast-section h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.playlist-section p,
+.podcast-section p {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 16px;
+}
+
+.create-playlist,
+.browse-podcasts {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 24px 12px;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.language-btn {
+    background-color: transparent;
+    border: 1px solid #727272;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.main-content {
+    flex: 1;
+    background-color: #121212;
+    overflow-y: auto;
+    margin-left: 280px;
+}
+
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.mobile-logo {
+    display: none;
+    font-size: 32px;
+    color: white;
+}
+
+
+.top-nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-arrows {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-btn {
+    background-color: rgb(39, 38, 38);
+    border: none;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-container i {
+    position: absolute;
+    left: 12px;
+    color: #121212;
+}
+
+.search-form input {
+    background-color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 20px;
+    width: 300px;
+    font-size: 14px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.separator {
+    color: #b3b3b3;
+}
+
+.signup-btn,
+.login-btn {
+    padding: 8px 32px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.signup-btn {
+    background-color: transparent;
+    color: #b3b3b3;
+    border: none;
+}
+
+.login-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+}
+
+
+.content {
+    padding: 24px 32px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+}
+
+.show-all {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.artist-grid,
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.artist-card,
+.album-card {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.artist-card:hover,
+.album-card:hover {
+    background-color: #282828;
+}
+
+.artist-card img,
+.album-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.artist-card h3,
+.album-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.artist-card p,
+.album-card p {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+
+.preview-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(90deg, #AF2896, #509BF5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.preview-text h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.preview-text p {
+    font-size: 14px;
+}
+
+.signup-free-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+    .search-form input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 72px;
+    }
+
+    .logo span,
+    .sidebar-nav ul li a span,
+    .playlist-section,
+    .podcast-section,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 72px;
+    }
+
+    .nav-right {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-right .nav-link {
+        display: none;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .search-form input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        left: 16px;
+        z-index: 1001;
+    }
+
+    .mobile-logo {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-arrows {
+        display: none;
+    }
+
+    .search-form input {
+        width: 120px;
+    }
+
+    .preview-text p {
+        display: none;
+    }
+
+    .signup-free-btn {
+        padding: 8px 16px;
+    }
+
+    .top-nav {
+        justify-content: center;
+        padding: 16px;
+    }
+
+    .nav-left {
+        position: relative;
+        width: 100%;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
